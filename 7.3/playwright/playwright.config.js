@@ -1,8 +1,8 @@
-import { chromium, defineConfig, devices } from '@playwright/test';
+import { chromium, defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
-  testDir: 'tests',
+  testDir: "tests",
 
   // Run all tests in parallel.
   fullyParallel: true,
@@ -17,20 +17,21 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   // Reporter to use
-  reporter: 'html',
+  reporter: "html",
 
   use: {
+    testTimeout: 80000,
     launchOptions: {
-        headless: false,
-        slowMo: 1000,
-        browser: chromium
-    }
+      headless: false,
+      slowMo: 1000,
+      browser: chromium,
+    },
   },
   // Configure projects for major browsers.
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
     },
   ],
 });
