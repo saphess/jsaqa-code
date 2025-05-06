@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runINBand",
+    "test-more-tabs": "jest"
   },
   "author": "",
   "license": "ISC",
